@@ -2,7 +2,10 @@
 using System.Reflection;
 using System.Threading.Tasks;
 using UnityEditor;
+using UnityEditor.Compilation;
+using UnityEditorInternal;
 using UnityEngine;
+using Assembly = System.Reflection.Assembly;
 
 namespace FirstExample
 {

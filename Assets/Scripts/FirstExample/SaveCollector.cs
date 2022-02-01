@@ -5,22 +5,8 @@ namespace FirstExample
     public class SaveCollector : MonoBehaviour
     {
         [SerializeField] private ObjectForSave[] objectsForSave;
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                SaveAll();
-            }
-
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                LoadAll();
-            }
-                
-        }
-
-        public void SaveAll()
+        
+        public string SaveAll()
         {
             var allSave = "";
             foreach (var objectForSave in objectsForSave)
@@ -29,8 +15,10 @@ namespace FirstExample
             }
 
             allSave = allSave.Replace(" ", string.Empty);
+            
             PlayerPrefs.SetString("AllSave", allSave);
-            Debug.Log(allSave);
+
+            return allSave;
         }
 
         //Суть в том, что каждый объект сам берет на себя логику загрузки и интерпретации сохранений
